@@ -30,7 +30,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
     width: 100%;
     background-color: #fff;
     color: #333;
@@ -38,13 +38,13 @@
 }
 
 .inner-s {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 80%;
+    margin-bottom: 100px;
 }
 
 .btn {
