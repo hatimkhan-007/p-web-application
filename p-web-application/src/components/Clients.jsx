@@ -10,6 +10,14 @@ function Clients() {
   return (
     <div className='client-section'>
         <h1>Clients</h1>
+        <div className='client-list'>
+            {clientsData.map((client, index) => (
+                <div key={index} className='client-item'>
+                    <List size={24} />
+                    <span>{client}</span>
+                </div>
+            ))}
+        </div>
     </div>
   )
 }
