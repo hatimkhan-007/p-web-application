@@ -6,6 +6,7 @@
 
 .navbar {
     width: 100%;
+    border: none;
     height: auto;
     padding: 0 150px;
     display: flex;
