@@ -5,14 +5,77 @@
 }
 
 .client-section {
-    display: flex;
-    align-items: center;
-    padding: 20px;
+    width: 100%;
+    padding: 40px 20px;
+    overflow: hidden;
 }
 
-.client-list{
+.client-list {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+    width: max-content;
+    animation: clientScroll 25s linear infinite;
+}
+
+.client-item {
+    width: 140px;
+    height: 80px;
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
+
+    padding: 15px;
+    border-radius: 8px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.client-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.client-item:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes clientScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.client-list:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .client-section {
+        padding: 30px 15px;
+    }
+
+    .client-list {
+        gap: 35px;
+        animation-duration: 20s;
+    }
+
+    .client-item {
+        width: 110px;
+        height: 65px;
+    }
 }
