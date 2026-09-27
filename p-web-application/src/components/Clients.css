@@ -3,3 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.client-section {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.client-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}

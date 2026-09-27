@@ -1,10 +1,6 @@
 import React from 'react'
-import { List } from 'react-bootstrap-icons'
-
-const clientsData = [
-  "Client 1", "Client 2", "Client 3", "Client 4", "Client 5", 
-  "Client 6", "Client 7", "Client 8", "Client 9", "Client 10"
-];
+import clientsData from '../data/Clientdata';
+import './Clients.css';
 
 function Clients() {
   return (
@@ -13,8 +9,7 @@ function Clients() {
         <div className='client-list'>
             {clientsData.map((client, index) => (
                 <div key={index} className='client-item'>
-                    <List size={24} />
-                    <span>{client}</span>
+                    <img src={client.logo} alt={client.name} />
                 </div>
             ))}
         </div>
