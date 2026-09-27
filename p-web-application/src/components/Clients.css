@@ -11,7 +11,6 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    overflow: hidden;
 }
 
 .client-section h1 {
@@ -26,10 +25,23 @@
 }
 
 .client-slider-wrapper {
-    position: relative;
     flex: 1;
     min-width: 0;
     overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 5%,
+        #000 95%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 5%,
+        #000 95%,
+        transparent
+    );
 }
 
 .client-list {
@@ -37,8 +49,7 @@
     align-items: center;
     gap: 60px;
     width: max-content;
-    animation: clientScroll 70s linear infinite;
-    will-change: transform;
+    animation: clientScroll 45s linear infinite;
 }
 
 .client-item {
@@ -65,8 +76,9 @@
     from {
         transform: translateX(0);
     }
+
     to {
-        transform: translateX(calc(-50% - 30px));
+        transform: translateX(-50%);
     }
 }
 
@@ -83,7 +95,7 @@
 
     .client-list {
         gap: 45px;
-        animation-duration: 22s;
+        animation-duration: 40s;
     }
 
     .client-item {
@@ -102,12 +114,12 @@
     }
 
     .client-section h1 {
-        font-size: 1.4rem;
+        width: 100%;
         padding-right: 0;
+        padding-bottom: 10px;
         border-right: none;
         border-bottom: 1px solid #ccc;
-        padding-bottom: 10px;
-        width: 100%;
+        font-size: 1.4rem;
     }
 
     .client-slider-wrapper {
@@ -116,7 +128,7 @@
 
     .client-list {
         gap: 35px;
-        animation-duration: 20s;
+        animation-duration: 35s;
     }
 
     .client-item {
@@ -138,7 +150,7 @@
 
     .client-list {
         gap: 30px;
-        animation-duration: 18s;
+        animation-duration: 30s;
     }
 
     .client-item {
