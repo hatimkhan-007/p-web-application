@@ -2,7 +2,8 @@ import React from 'react'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Hero_section from './components/Hero-section.jsx'
-import Clients from './components/Clients.jsx'
+import Clients from './components/Clients.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Hero_section />
       <Clients />
+      <Footer />
     </>
   )
 }

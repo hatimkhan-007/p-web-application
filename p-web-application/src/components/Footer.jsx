@@ -1,9 +1,15 @@
 import React from 'react'
+import './Footer.css'
 
 function Footer() {
   return (
     <footer>
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
+        <div className='footer-div'></div>
+        <div className='footer-div'></div>
+        <div className='footer-div'></div>
+        <div className='footer-div'></div>
+        <div className='footer-div'></div>
+        <div className='footer-div'></div>
     </footer>
   )
 }
