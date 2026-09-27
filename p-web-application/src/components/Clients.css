@@ -6,7 +6,29 @@
 
 .client-section {
     width: 100%;
-    padding: 40px 20px;
+    padding: 30px 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.client-section h1 {
+    flex-shrink: 0;
+    font-family: "Orbitron", sans-serif !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    white-space: nowrap;
+    padding-right: 40px;
+    border-right: 1px solid #ccc;
+}
+
+.client-slider-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 0;
     overflow: hidden;
 }
 
@@ -15,58 +37,81 @@
     align-items: center;
     gap: 60px;
     width: max-content;
-    animation: clientScroll 25s linear infinite;
+    animation: clientScroll 70s linear infinite;
+    will-change: transform;
 }
 
 .client-item {
     width: 140px;
-    height: 80px;
-    flex: 0 0 auto;
-
+    height: 60px;
+    flex: 0 0 140px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 15px;
-    border-radius: 8px;
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .client-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
     display: block;
-    transition: transform 0.2s ease;
+    object-fit: contain;
 }
 
-.client-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.client-item:hover img {
-    transform: scale(1.05);
+.client-slider-wrapper:hover .client-list {
+    animation-play-state: paused;
 }
 
 @keyframes clientScroll {
-    0% {
+    from {
         transform: translateX(0);
     }
-
-    100% {
-        transform: translateX(-50%);
+    to {
+        transform: translateX(calc(-50% - 30px));
     }
 }
 
-.client-list:hover {
-    animation-play-state: paused;
+@media (max-width: 992px) {
+    .client-section {
+        padding: 25px 30px;
+        gap: 30px;
+    }
+
+    .client-section h1 {
+        font-size: 1.3rem;
+        padding-right: 30px;
+    }
+
+    .client-list {
+        gap: 45px;
+        animation-duration: 22s;
+    }
+
+    .client-item {
+        width: 125px;
+        height: 50px;
+        flex-basis: 125px;
+    }
 }
 
 @media (max-width: 768px) {
     .client-section {
-        padding: 30px 15px;
+        padding: 25px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .client-section h1 {
+        font-size: 1.4rem;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        width: 100%;
+    }
+
+    .client-slider-wrapper {
+        width: 100%;
     }
 
     .client-list {
@@ -76,6 +121,35 @@
 
     .client-item {
         width: 110px;
-        height: 65px;
+        height: 45px;
+        flex-basis: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-section {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .client-section h1 {
+        font-size: 1.2rem;
+    }
+
+    .client-list {
+        gap: 30px;
+        animation-duration: 18s;
+    }
+
+    .client-item {
+        width: 95px;
+        height: 40px;
+        flex-basis: 95px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .client-list {
+        animation: none;
     }
 }
