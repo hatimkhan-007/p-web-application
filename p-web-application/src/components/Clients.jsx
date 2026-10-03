@@ -1,25 +1,36 @@
-import React from 'react';
-import clientsData from '../data/Clientdata';
-import './Clients.css';
+import clientsData from '../data/Clientdata'
+import './Clients.css'
 
 function Clients() {
-  const duplicatedClients = [...clientsData, ...clientsData];
+  const loopedClients = [...clientsData, ...clientsData]
 
   return (
-    <div className='client-section'>
-      <h1>Our Clients</h1>
-      {/* Adding the map to run the loop and create new and updated array */}
-      <div className='client-slider-wrapper'>
+    <section className="client-section" aria-label="Our clients">
+      <h2>Our Clients</h2>
+      <div className="client-slider-wrapper">
         <div className="client-list">
-          {[...clientsData, ...clientsData].map((client, index) => (
-              <div className="client-item" key={index}>
-                  <img src={client.logo} alt={client.name} />
+          {loopedClients.map((client, index) => {
+            const isCopy = index >= clientsData.length
+
+            return (
+              <div
+                className="client-item"
+                key={`${client.name}-${index}`}
+                aria-hidden={isCopy || undefined}
+              >
+                <img
+                  src={client.logo}
+                  alt={isCopy ? '' : client.name}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-          ))}
+            )
+          })}
         </div>
       </div>
-    </div>
-  );
+    </section>
+  )
 }
 
-export default Clients;
+export default Clients
