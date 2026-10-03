@@ -1,18 +1,19 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar.jsx'
-import Hero_section from './components/Hero-section.jsx'
-import Clients from './components/Clients.jsx';
-import Footer from './components/Footer.jsx';
+import Layout from './components/Layout.jsx'
+import Home from './pages/Home.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero_section />
-      <Clients />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
