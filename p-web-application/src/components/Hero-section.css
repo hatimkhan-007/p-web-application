@@ -1,11 +1,3 @@
-@import url('https://googleapis.com');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .h-h1 {
     font-family: "Orbitron", sans-serif !important;
     font-weight: 700;
@@ -20,6 +12,7 @@
     font-size: 2.3rem;
     width: 90%;
     line-height: 1.2;
+    letter-spacing: -1.68px;
     color: #333;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -30,7 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    min-height: 75vh;
     width: 100%;
     background-color: #fff;
     color: #333;
@@ -61,4 +54,21 @@
 
 .btn:hover {
     background-color: #A81A1A;
+}
+
+@media (max-width: 600px) {
+    .h-h1,
+    .h-h2 {
+        font-size: 1.4rem;
+        letter-spacing: -0.5px;
+    }
+
+    .inner-s {
+        width: 90%;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        padding: 16px 20px;
+    }
 }
