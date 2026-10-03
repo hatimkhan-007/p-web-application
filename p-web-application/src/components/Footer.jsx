@@ -1,69 +1,46 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
+import { navItems, socialLinks, legalLinks } from '../data/navData'
 import './Footer.css'
+
+const currentYear = new Date().getFullYear()
 
 function Footer() {
   return (
     <footer>
-        <div className='footer-div'>
-            <h2>Services</h2>
-            <ul className='navbar-lists'>
-                <li className='navbar-list'><a href="#">Team Augmentation</a></li>
-                <li className='navbar-list'><a href="#">MVP Development</a></li>
-                <li className='navbar-list'><a href="#">App Development</a></li>
-                <li className='navbar-list'><a href="#">Robotics</a></li>
-                <li className='navbar-list'><a href="#">AI Transformation</a></li>
-            </ul>
+      {navItems.map((column) => (
+        <div className="footer-div" key={column.title}>
+          <h2>{column.title}</h2>
+          <ul className="navbar-lists">
+            {column.links.map((link) => (
+              <li className="navbar-list" key={link.to}>
+                <Link to={link.to}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className='footer-div'>
-            <h2>Technologies</h2>
-            <ul className='navbar-lists'>
-                <li className='navbar-list'><a href="#">AI/Machine Learning</a></li>
-                <li className='navbar-list'><a href="#">Computer Vision</a></li>
-                <li className='navbar-list'><a href="#">Blockchain</a></li>
-                <li className='navbar-list'><a href="#">Stacks</a></li>
-                <li className='navbar-list'><a href="#">App Development</a></li>
-            </ul>
+      ))}
+
+      <div className="footer-div">
+        <h2>Follow us on:</h2>
+        <ul className="navbar-lists">
+          {socialLinks.map((social) => (
+            <li className="navbar-list" key={social.label}>
+              <a href={social.href} target="_blank" rel="noopener noreferrer">
+                {social.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="end-footer">
+        <div className="start-f">
+          {legalLinks.map((link) => (
+            <Link to={link.to} key={link.to}>{link.label}</Link>
+          ))}
         </div>
-        <div className='footer-div'>
-            <h2>Customers</h2>
-            <ul className='navbar-lists'>
-                <li className='navbar-list'><a href="#">Startups</a></li>
-                <li className='navbar-list'><a href="#">SaaS Companies</a></li>
-                <li className='navbar-list'><a href="#">App Companies</a></li>
-                <li className='navbar-list'><a href="#">Marketing Agencies</a></li>
-                <li className='navbar-list'><a href="#">Enterprises</a></li>
-            </ul>
-        </div>
-        <div className='footer-div'>
-            <h2>Look Inside</h2>
-            <ul className='navbar-lists'>
-                <li className='navbar-list'><a href="#">Blog</a></li>
-                <li className='navbar-list'><a href="#">Portfolio</a></li>
-                <li className='navbar-list'><a href="#">Careers</a></li>
-            </ul>
-        </div>
-        <div className='footer-div'>
-            <h2>About Us</h2>
-            <ul className='navbar-lists'>
-                <li className='navbar-list'><a href="#">History</a></li>
-                <li className='navbar-list'><a href="#">Present</a></li>
-                <li className='navbar-list'><a href="#">Future</a></li>
-                <li className='navbar-list'><a href="#">Why us?</a></li>
-                <li className='navbar-list'><a href="#">Contact us</a></li>
-            </ul>
-        </div>
-        <div className='footer-div'>
-            <h2>Follow us on:</h2>
-            <ul className='navbar-lists'>
-            </ul>
-        </div>
-        <div className='end-footer'>
-            <div className='start-f'>
-                <a href="#">Privacy Policy</a>
-                <a href="#">IMS Policy</a>
-            </div>
-            <div className='end-f'>Copyright &copy; 2026 LOHANIS. All Rights Reserved.</div>
-        </div>
+        <div className="end-f">Copyright &copy; {currentYear} LOHANIS. All Rights Reserved.</div>
+      </div>
     </footer>
   )
 }
