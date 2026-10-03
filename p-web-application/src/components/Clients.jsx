@@ -8,7 +8,7 @@ function Clients() {
   return (
     <div className='client-section'>
       <h1>Our Clients</h1>
-      
+      {/* Adding the map to run the loop and create new and updated array */}
       <div className='client-slider-wrapper'>
         <div className="client-list">
           {[...clientsData, ...clientsData].map((client, index) => (
