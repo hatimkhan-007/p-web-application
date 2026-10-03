@@ -4,6 +4,12 @@ Lohani Solutions is my personal software house website and digital solutions bra
 
 The website is designed to present Lohani Solutions professionally, showcase its services and capabilities, and provide an online presence for future clients and businesses.
 
+## 🖥️ Website Preview
+
+<p align="center">
+  <img src="p-web-application/src/assets/main-page.png" alt="Lohani Solutions Main Page" width="900">
+</p>
+
 ## 🚀 About Lohani Solutions
 
 Lohani Solutions focuses on building modern digital products, software, and intelligent solutions.
@@ -81,20 +87,18 @@ Open the URL in your browser to view the website.
 ## 📂 Project Structure
 
 ```text
-Lohani-Solutions/
-│
-├── public/
-│
+p-web-application/
+├── node_modules/
 ├── src/
 │   ├── assets/
 │   ├── components/
-│   ├── App.jsx
+│   ├── data/
+│   ├── pages/
 │   ├── App.css
-│   ├── main.jsx
-│   └── index.css
-│
-├── package.json
-├── vite.config.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
 └── README.md
 ```
 
