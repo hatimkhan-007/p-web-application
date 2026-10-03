@@ -159,3 +159,22 @@ footer {
         font-size: 0.75rem;
     }
 }
+
+.social-lists {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    padding: 0;
+}
+
+.social-lists a {
+    display: inline-flex;
+    color: #000;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.social-lists a:hover {
+    color: #A81A1A;
+    transform: translateY(-3px);
+}

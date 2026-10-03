@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom'
 import { navItems, socialLinks, legalLinks } from '../data/navData'
+import { Facebook, Github, Instagram, Linkedin } from 'react-bootstrap-icons'
 import './Footer.css'
+
+const socialIcons = {
+  LinkedIn: Linkedin,
+  GitHub: Github,
+  Facebook,
+  Instagram,
+}
 
 const currentYear = new Date().getFullYear()
 
@@ -20,18 +28,27 @@ function Footer() {
         </div>
       ))}
 
-      <div className="footer-div">
-        <h2>Follow us on:</h2>
-        <ul className="navbar-lists">
-          {socialLinks.map((social) => (
-            <li className="navbar-list" key={social.label}>
-              <a href={social.href} target="_blank" rel="noopener noreferrer">
-                {social.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div className="footer-div">
+            <h2>Follow us on:</h2>
+            <ul className="social-lists">
+            {socialLinks.map((social) => {
+                const Icon = socialIcons[social.label]
+
+                return (
+                <li key={social.label}>
+                    <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    >
+                    <Icon size={24} />
+                    </a>
+                </li>
+                )
+            })}
+            </ul>
+        </div>
 
       <div className="end-footer">
         <div className="start-f">
